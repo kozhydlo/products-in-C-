@@ -5,7 +5,7 @@ class Program
 {
     static void Main()
     {
-        // create the binary file
+        //  створити двійковий файл
         using (BinaryWriter bw = new BinaryWriter(File.Open("Products.dat", FileMode.Create)))
         {
             // write some data to the file
@@ -15,7 +15,7 @@ class Program
             bw.Write("Johnson S.\t\t\t90\t110\t120\t130\t110\t560");
         }
 
-        // display the full table of file data
+        // відобразити повну таблицю даних файлу
         using (BinaryReader br = new BinaryReader(File.Open("Products.dat", FileMode.Open)))
         {
             Console.WriteLine(br.ReadString());
@@ -24,7 +24,7 @@ class Program
             Console.WriteLine(br.ReadString());
         }
 
-        // display the part of the file data with worker information
+        // відобразити частину даних файлу з інформацією про працівника
         using (BinaryReader br = new BinaryReader(File.Open("Products.dat", FileMode.Open)))
         {
             string line;
@@ -42,7 +42,7 @@ class Program
             }
         }
 
-        // read the file to find workers who produced at least a specified number of products
+        // прочитайте файл, щоб знайти працівників, які виготовили принаймні вказану кількість продуктів
         int minProducts = 550;
         using (BinaryReader br = new BinaryReader(File.Open("Products.dat", FileMode.Open)))
         {
@@ -59,7 +59,7 @@ class Program
             }
         }
 
-        // add data to the file
+        // додати дані до файлу
         using (BinaryWriter bw = new BinaryWriter(File.Open("Products.dat", FileMode.Append)))
         {
             bw.Write("Anderson L.\t\t80\t90\t100\t80\t70\t420");
